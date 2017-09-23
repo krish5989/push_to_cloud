@@ -9,7 +9,7 @@
 #############################################################################
 
 . /opt/hd/etc/set_env
-. /srv/hadoop/mm/sz/cdn_pogcanada_cloud/utils/pog_canada_cloud_env.sh
+. /utils/env.sh
 export mailer="${UTIL_DIR}/thd_mailer.ksh"
 
 log() 
@@ -34,9 +34,9 @@ function error_exit
     log "Paging Support: Message <$msg>"
         
         if [ $LCP = "PR" ]; then
-        	${mailer} -f "POGCANADA_noreply@homedepot.com" -t "merch_IT_OPD@homedepot.com" -s "${msg}" -p High -bt "${errfile}"
+        	${mailer} -f "from_id" -t "to_id" -s "${msg}" -p High -bt "${errfile}"
         else
-        	${mailer} -f "POGCANADA_noreply@homedepot.com" -t "merch_IT_OPD@homedepot.com" -c "krishnan_gopalakrishnan@homedepot.com" -s "${msg}" -p High -bt "${errfile}"
+        	${mailer} -f "from_id" -t "to_id" -s "${msg}" -p High -bt "${errfile}"
         fi
     fi
     exit ${rc}
@@ -54,10 +54,10 @@ fi
 #determine datafactory URL based on LCP
 if [ $LCP == "PR" ]; 
 then
-	HOSTNAME="bigdata.homedepot.com"
+	HOSTNAME="hostname"
 	SA_TOKEN="token"
 else
-	HOSTNAME="bigdata-qa.homedepot.com"
+	HOSTNAME="hostname-llc"
 	SA_TOKEN="token"
 fi
 
