@@ -1,0 +1,18 @@
+{
+  "cloudPath":"jda_pr",
+  "cloudProject":"ca-pr-merch",
+  "dataClassification":"PUBLIC",
+  "dataQualityIndicator":"RELEASED",
+  "dataUsageIndicator":"IT",
+  "loadFrequency":"DAILY",
+  "name":"moveDataToCloud",
+  "owner":"hadca01",
+  "ownerEmail":"krishnan5989@gmail.com",
+  "srcPath":"/src/",
+  "srcStorageType":"LINUX",
+  "description": "move data from edge node machine to cloud bucket",
+  "cloudProvider": "GOOGLE",
+  "domain": "MERCHANDISING",
+  "destStorageType": "CLOUD",
+  "purgeAfterDays": "7"
+}
